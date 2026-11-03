@@ -1,7 +1,5 @@
 # Proyecto de analítica financiera | IX Concurso ITM 2026 | Optima Invest
 
-> **Plantilla de trabajo para estudiantes.** Crea una copia de este archivo en el repositorio de tu equipo y reemplaza los textos entre corchetes. Conserva las preguntas como apoyo durante la investigación. No publiques claves de acceso ni información privada.
-
 **Curso:** Lenguajes de Programación · Ingeniería Financiera  
 **Concurso:** 12 de noviembre de 2026  
 **Simulacro:** 10 de noviembre de 2026  
