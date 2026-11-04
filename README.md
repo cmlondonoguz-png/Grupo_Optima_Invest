@@ -43,7 +43,7 @@ Optima Invest busca abordar esta situación mediante el análisis de diferentes 
 - **Variables disponibles:** Fecha, precio de cierre, volumen
 - **Limitaciones de los datos:** Fechas faltantes, zona horaria, ajustes, diferencias de mercado
 
-**Primera prueba:** [Enlace al notebook o archivo que descarga o consulta datos; indica qué funcionó y qué no]
+**Primera prueba:** https://colab.research.google.com/drive/1H8QIkoFmbILgDaXEcKBX8CHj7Ahy7mca#scrollTo=9e126d30
 
 ## 4. Metodología de análisis · S25–S26
 
