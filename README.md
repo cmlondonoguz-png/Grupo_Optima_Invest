@@ -17,9 +17,11 @@
 
 **Investiga:** ¿qué significa analizar el comportamiento histórico de un activo financiero? ¿Qué preguntas pueden responderse con datos de mercado y cuáles no?
 
-- **Situación o fenómeno de interés:** Busca maximizar el rendimiento del portafolio con los activos seleccionados por el usuario
-- **Pregunta principal:** ¿Tu portafolio actual es tan rentable como esperas?
-- **Objetivo del análisis:** Buscamos: Analizar el rendimiento del portafolio, comparar los rendimientos de un portafolio desordenado contra el mismo portafolio pero maximizando su rentabilidad y diversificado
+- **Situación o fenómeno de interés:** Los inversionistas suelen construir portafolios con diferentes activos financieros, pero no siempre conocen si la distribución de su capital es eficiente o si existen combinaciones alternativas que podrían ofrecer una mejor relación entre rentabilidad y riesgo.
+
+Optima Invest busca abordar esta situación mediante el análisis de diferentes activos y la optimización de sus ponderaciones dentro de un portafolio de inversión.
+- **Pregunta principal:** ¿Tu portafolio actual es tan rentable como podría serlo, considerando su nivel de riesgo y las posibilidades de diversificación?
+- **Objetivo del análisis:**Desarrollar una aplicación de analítica financiera que permita evaluar el rendimiento histórico de un portafolio de inversión, comparar su distribución inicial con diferentes alternativas de optimización y determinar qué combinación de activos presenta una mejor relación entre rentabilidad y riesgo.
 - **Importancia financiera:** Importa porque buscamos maximizar la rentabilidad y diversificación del portafolio del inversionista
 - **Preguntas complementarias:** [Opcionales]
 
