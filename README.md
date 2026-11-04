@@ -10,7 +10,7 @@
 - **Nombre de la aplicación:** Optima Invest
 - **Equipo e integrantes:** Marcela Guerrero / Kevin Jaramillo / Carlos Londoño 
 - **Enlace a la aplicación:** [Pendiente / URL]
-- **Repositorio del proyecto:** [URL]
+- **Repositorio del proyecto:** [[URL]](https://github.com/cmlondonoguz-png/Grupo_Optima_Invest/tree/main)
 - **Última actualización:** [AAAA-MM-DD]
 
 ## 2. ¿Qué queremos investigar? · S25
