@@ -32,12 +32,11 @@
 | Activo | Símbolo o ticker | Tipo | Razón para incluirlo |
 |---|---|---|---|
 | [Activo 1] | [VOO] | [ETF] | [Es un ETF estable historicamente] |
-| [Activo 2] | [NU] | [Tipo] | [Justificación] |
-| [Activo 3] | [] | [Tipo] | [Justificación] |
-| [Activo 4] | [] | [Tipo] | [Justificación] |
+| [Activo 2] | [NU] | [ACCION   ] | [Es una buena accion con bastante proyección a futuro en el sector financiero] |
+| [Activo 3] | [BTC] | [Criptomoneda  ] | [Es la criptomoneda mas importante y reconocida a nivel mundial] |
 
-- **Fuente de datos:** [Proveedor y enlace a su documentación]
-- **Período:** [Inicio – fin]
+- **Fuente de datos:** Proveedor: finance.yahoo.com link: https://finance.yahoo.com/quote/VOO/
+- **Período:** 31 octubre 2025 a 31 octubre 2026
 - **Frecuencia:** [Diaria, semanal, mensual...]
 - **Variables disponibles:** [Fecha, precio de cierre, volumen...]
 - **Limitaciones de los datos:** [Fechas faltantes, zona horaria, ajustes, diferencias de mercado...]
