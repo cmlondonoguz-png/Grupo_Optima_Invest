@@ -21,9 +21,9 @@
 
 Optima Invest busca abordar esta situación mediante el análisis de diferentes activos y la optimización de sus ponderaciones dentro de un portafolio de inversión.
 - **Pregunta principal:** ¿Tu portafolio actual es tan rentable como podría serlo, considerando su nivel de riesgo y las posibilidades de diversificación?
-- **Objetivo del análisis:**Desarrollar una aplicación de analítica financiera que permita evaluar el rendimiento histórico de un portafolio de inversión, comparar su distribución inicial con diferentes alternativas de optimización y determinar qué combinación de activos presenta una mejor relación entre rentabilidad y riesgo.
-- **Importancia financiera:** Importa porque buscamos maximizar la rentabilidad y diversificación del portafolio del inversionista
-- **Preguntas complementarias:** [Opcionales]
+- **Objetivo del análisis:** Desarrollar una aplicación de analítica financiera que permita evaluar el rendimiento histórico de un portafolio de inversión, comparar su distribución inicial con diferentes alternativas de optimización y determinar qué combinación de activos presenta una mejor relación entre rentabilidad y riesgo.
+- **Importancia financiera:** Permite a los inversionistas retail tomar decisiones basadas en datos cuantitativos en lugar de intuición, demostrando la importancia de la diversificación y la optimización de pesos para mejorar el perfil riesgo-retorno de sus inversiones.
+- **Preguntas complementarias:** ¿Cómo afecta la inclusión de un activo de alta volatilidad (criptomoneda) a la estabilidad general de un portafolio tradicional?
 
 > **Comprueba:** ¿tu pregunta identifica activos, variables y un período de estudio? ¿Es posible responderla con datos disponibles?
 
