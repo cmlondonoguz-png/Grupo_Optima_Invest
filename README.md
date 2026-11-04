@@ -17,10 +17,10 @@
 
 **Investiga:** ¿qué significa analizar el comportamiento histórico de un activo financiero? ¿Qué preguntas pueden responderse con datos de mercado y cuáles no?
 
-- **Situación o fenómeno de interés:** [Explica qué deseas comprender]
-- **Pregunta principal:** [Formula una pregunta concreta, delimitada y que pueda responderse con datos históricos]
-- **Objetivo del análisis:** [Qué esperas analizar, comparar o describir]
-- **Importancia financiera:** [Por qué importa estudiar este comportamiento]
+- **Situación o fenómeno de interés:** Busca maximizar el rendimiento del portafolio con los activos seleccionados por el usuario
+- **Pregunta principal:** ¿Tu portafolio actual es tan rentable como esperas?
+- **Objetivo del análisis:** Buscamos: Analizar el rendimiento del portafolio, comparar los rendimientos de un portafolio desordenado contra el mismo portafolio pero maximizando su rentabilidad y diversificado
+- **Importancia financiera:** Importa porque buscamos maximizar la rentabilidad y diversificación del portafolio del inversionista
 - **Preguntas complementarias:** [Opcionales]
 
 > **Comprueba:** ¿tu pregunta identifica activos, variables y un período de estudio? ¿Es posible responderla con datos disponibles?
@@ -31,8 +31,10 @@
 
 | Activo | Símbolo o ticker | Tipo | Razón para incluirlo |
 |---|---|---|---|
-| [Activo 1] | [Ticker] | [Cripto, commodity, acción, ETF...] | [Justificación] |
-| [Activo 2] | [Ticker] | [Tipo] | [Justificación] |
+| [Activo 1] | [VOO] | [ETF] | [Es un ETF estable historicamente] |
+| [Activo 2] | [NU] | [Tipo] | [Justificación] |
+| [Activo 3] | [] | [Tipo] | [Justificación] |
+| [Activo 4] | [] | [Tipo] | [Justificación] |
 
 - **Fuente de datos:** [Proveedor y enlace a su documentación]
 - **Período:** [Inicio – fin]
