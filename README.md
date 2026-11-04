@@ -39,9 +39,9 @@ Optima Invest busca abordar esta situación mediante el análisis de diferentes 
 
 - **Fuente de datos:** Proveedor: finance.yahoo.com link: https://finance.yahoo.com/quote/VOO/
 - **Período:** 31 octubre 2025 a 31 octubre 2026
-- **Frecuencia:** [Diaria, semanal, mensual...]
-- **Variables disponibles:** [Fecha, precio de cierre, volumen...]
-- **Limitaciones de los datos:** [Fechas faltantes, zona horaria, ajustes, diferencias de mercado...]
+- **Frecuencia:** Diaria
+- **Variables disponibles:** Fecha, precio de cierre, volumen
+- **Limitaciones de los datos:** Fechas faltantes, zona horaria, ajustes, diferencias de mercado
 
 **Primera prueba:** [Enlace al notebook o archivo que descarga o consulta datos; indica qué funcionó y qué no]
 
