@@ -3,7 +3,7 @@
 **Curso:** Lenguajes de Programación · Ingeniería Financiera  
 **Concurso:** 12 de noviembre de 2026  
 **Simulacro:** 10 de noviembre de 2026  
-**Tecnología:** [Python + Streamlit / R + Shiny / otra interfaz en Python o R]
+**Tecnología:** Python + Streamlit
 
 ## 1. Identificación del proyecto
 
@@ -11,7 +11,7 @@
 - **Equipo e integrantes:** Marcela Guerrero / Kevin Jaramillo / Carlos Londoño 
 - **Enlace a la aplicación:** [Pendiente / URL]
 - **Repositorio del proyecto:** [[URL]](https://github.com/cmlondonoguz-png/Grupo_Optima_Invest/tree/main)
-- **Última actualización:** [AAAA-MM-DD]
+- **Última actualización:** 2026-11-10
 
 ## 2. ¿Qué queremos investigar? · S25
 
@@ -40,8 +40,8 @@ Optima Invest busca abordar esta situación mediante el análisis de diferentes 
 - **Fuente de datos:** Proveedor: finance.yahoo.com link: https://finance.yahoo.com/quote/VOO/
 - **Período:** 31 octubre 2025 a 31 octubre 2026
 - **Frecuencia:** Diaria
-- **Variables disponibles:** Fecha, precio de cierre, volumen
-- **Limitaciones de los datos:** Fechas faltantes, zona horaria, ajustes, diferencias de mercado
+- **Variables disponibles:** Fecha, Precio de cierre ajustado (Close).
+- **Limitaciones de los datos:** Fechas faltantes por festivos de mercado, datos simulados en caso de caída del servidor de Yahoo, y no consideración de costos de transacción ni impuestos.
 
 **Primera prueba:** https://colab.research.google.com/drive/1H8QIkoFmbILgDaXEcKBX8CHj7Ahy7mca#scrollTo=9e126d30
 
@@ -51,17 +51,22 @@ Optima Invest busca abordar esta situación mediante el análisis de diferentes 
 
 | Indicador / técnica | ¿Qué mide? | ¿Por qué lo necesitamos? | Implementación |
 |---|---|---|---|
-| [Indicador 1] | [Concepto y fórmula, si aplica] | [Relación con la pregunta] | [Archivo o celda] |
-| [Indicador 2] | [Concepto y fórmula, si aplica] | [Justificación] | [Pendiente / enlace] |
+| Rendimiento Acumulado | El crecimiento total del capital invertido `(1 + r).cumprod()`. | Muestra la rentabilidad real generada en el período seleccionado. | `app.py` (Línea 146) |
+| Volatilidad Anualizada | La dispersión de los retornos `std() * sqrt(252)`. | Cuantifica el riesgo de mercado asumido por el portafolio. | `app.py` (Línea 148) |
+| Ratio de Sharpe | Rendimiento total sobre la volatilidad anualizada. | Evalúa la eficiencia del portafolio (riesgo vs. retorno). | `app.py` (Línea 150) |
+| Matriz de Correlación | Relación lineal entre activos (Pearson de -1 a 1). | Determina el grado de diversificación real de la cartera. | `app.py` (Línea 174) |
+| Optimización SLSQP (Solver) | Asignación óptima de pesos (W) maximizando Sharpe. | Responde a la pregunta de si existe una combinación más eficiente. | `app.py` (Línea 232) |
+| Simulación de Monte Carlo | Proyección estocástica de escenarios futuros y VaR 95%. | Estima la probabilidad de pérdida y los peores/mejores escenarios. | `app.py` (Línea 367) |
 
-No es necesario utilizar todos los indicadores estudiados en clase. Selecciona y justifica únicamente los pertinentes.
 
 ### Visualizaciones previstas
 
 | Gráfico | Pregunta que ayuda a responder | Variables | Interpretación esperada |
 |---|---|---|---|
-| [Gráfico 1] | [Pregunta] | [Variables] | [Qué se podrá observar] |
-| [Gráfico 2] | [Pregunta] | [Variables] | [Qué se podrá comparar] |
+| Gráfico de Líneas (Base 100) | ¿Cómo se comparan los activos desde un mismo punto de partida? | Precio normalizado, Fecha | Evolución comparativa del crecimiento individual de cada activo. |
+| Mapa de Calor (Heatmap) | ¿Qué tan correlacionados están los activos? | Matriz de Correlación | Identificar pares de activos que se mueven en la misma dirección o en direcciones opuestas. |
+| Gráfico Circular (Pie Chart) | ¿Cuál es la composición ideal del portafolio? | Pesos óptimos (W), Activos | Visualización rápida de la asignación de capital sugerida por el Solver. |
+| Histograma de Simulación | ¿Cuáles son los escenarios probables de rentabilidad? | Frecuencia, Rentabilidad Final | Distribución de los resultados de Monte Carlo, identificando el VaR 95% y el promedio. |
 
 **Primer resultado verificable:** [Enlace a un cálculo o gráfico realizado con datos reales y una interpretación breve]
 
@@ -69,31 +74,28 @@ No es necesario utilizar todos los indicadores estudiados en clase. Selecciona y
 
 **Investiga:** ¿cómo se construyen controles, gráficos y métricas con la herramienta elegida? ¿qué sucede cuando el usuario modifica una selección?
 
-- **Usuarios previstos:** [Quién podría consultar la aplicación]
-- **Entradas y filtros:** [Activos, fechas, parámetros...]
-- **Secciones de la interfaz:** [Pantalla principal, comparación, riesgo, etc.]
-- **Resultados visibles:** [Gráficos, tablas, indicadores y explicaciones]
-- **Interacción principal:** [Describe qué cambia cuando el usuario modifica un control]
+- **Usuarios previstos:** Estudiantes de ingeniería financiera, inversionistas retail y entusiastas de las finanzas.
+- **Entradas y filtros:** Buscador de tickers, selección múltiple de activos, período histórico (3mo a 2y), capital inicial, fuente de datos y pesos manuales por activo.
+- **Secciones de la interfaz:** Se divide en 5 pestañas: 📈 Portafolio, 📊 Estadística, ⚖️ Comparación, 🎲 Montecarlo, e ℹ️ Proyecto.
+- **Resultados visibles:** Métricas principales en la parte superior (Rendimiento, Volatilidad, Capital final), diagnóstico general de diversificación, tablas descriptivas, pesos óptimos matemáticos y gráficas interactivas.
+- **Interacción principal:** Cuando el usuario ajusta los pesos en la barra lateral, la aplicación normaliza a 100% y recalcula instantáneamente la evolución del portafolio actual frente al portafolio optimizado por el Solver.
 
 **Flujo previsto:**  
-Selección de activos y parámetros → Obtención de datos → Preparación y cálculos → Visualización → Interpretación.
+Selección de activos y configuración de capital/pesos → Descarga de datos con `yfinance` → Cálculo de matriz de covarianza y rendimientos → Optimización matemática (Scipy) → Comparativa visual → Análisis de riesgo vía Monte Carlo.
 
-**Boceto o esquema:** [Inserta una imagen o enlace al diseño, por ejemplo `docs/boceto.png`]
-
-**Decisión técnica:** [¿Por qué usarás Python o R y qué biblioteca de aplicación elegiste?]
+**Decisión técnica:** Se utilizó Python por su robustez en cálculos científicos (`numpy`, `scipy`, `pandas`) y Streamlit por su capacidad para desplegar interfaces interactivas de datos rápidamente sin necesidad de desarrollo web tradicional. Plotly se integró por la interactividad visual requerida.
 
 ## 6. Construcción y pruebas · S26 (5 de noviembre)
 
 Actualiza esta sección durante el laboratorio de desarrollo.
 
-- **Componentes implementados:** [Qué funciona realmente]
-- **Cómo ejecutar la aplicación:** [Comandos, dependencias y pasos]
-- **Dependencias:** [Archivo `requirements.txt`, `renv.lock` u otro]
-- **Pruebas realizadas:** [Caso probado, resultado esperado y resultado obtenido]
-- **Errores conocidos y cómo se resolvieron:** [Explicación]
-- **Pendientes antes del simulacro:** [Tareas concretas]
-
-> No afirmes que una función está implementada si aún no ha sido probada.
+- **Componentes implementados:** Extracción de datos en tiempo real, normalización de pesos, cálculos descriptivos, optimización de Sharpe mediante SLSQP, simulación de Monte Carlo vectorizada con NumPy, renderizado de visualizaciones dinámicas.
+- **Cómo ejecutar la aplicación:**
+  pip install -r requirements.txt
+  streamlit run app.py
+- **Dependencias:** `streamlit`, `pandas`, `numpy`, `yfinance`, `plotly`, `scipy`.
+- **Pruebas realizadas:** Se probó la interrupción del API de Yahoo Finance, implementando con éxito un generador de precios simulados como mecanismo de respaldo (fallback) para evitar que la aplicación falle en pleno concurso. Se validó la normalización matemática cuando el usuario excede el 100% en la asignación de pesos manuales.
+- **Errores conocidos y cómo se resolvieron:** Las micro-fracciones negativas residuales del optimizador SLSQP (ej. `-1e-16`) se resolvieron aplicando una máscara lambda que convierte a `0.0` cualquier valor menor a `1e-4`.
 
 ## 7. Hallazgos e interpretación · S26–S28
 
@@ -111,11 +113,11 @@ Para cada hallazgo importante, registra:
 ## 8. Simulacro · S27 (10 de noviembre)
 
 **Guion de sustentación (3–5 minutos):**
-- Problema financiero y activos.
-- Datos y metodología.
-- Demostración de interactividad.
-- Hallazgos e interpretación.
-- Conclusión y limitaciones.
+- **Problema financiero y activos:** Dificultad de estructurar un portafolio sin intuición. Presentación de VOO, NU, BTC.
+- **Datos y metodología:** Extracción vía yfinance y cálculos de retornos logarítmicos/aritméticos.
+- **Demostración de interactividad:** Cambio de pesos en la barra lateral para observar el impacto en el Ratio de Sharpe.
+- **Hallazgos e interpretación:** Contraste del portafolio empírico vs optimizado por el Solver de Scipy.
+- **Conclusión y limitaciones:** Impacto real de la diversificación matemática y límites de las proyecciones (Monte Carlo).
 
 **Retroalimentación recibida:** [Observaciones del docente o compañeros]
 
@@ -135,9 +137,9 @@ Para cada hallazgo importante, registra:
 
 | Fecha | Integrante(s) | Investigación o decisión | Avance técnico / evidencia | Próximo paso |
 |---|---|---|---|---|
-| 2026-11-03 | [Nombre] | [Qué investigamos] | [Enlace a código o documento] | [Acción] |
-| 2026-11-05 | [Nombre] | [Decisiones] | [Evidencia] | [Acción] |
-| 2026-11-10 | [Nombre] | [Retroalimentación] | [Cambio] | [Acción] |
+| 2026-10-31 | Marcela, Kevin, Carlos | Definición de lógica y activos | Esbozo del layout en `app.py` | Integrar librerías financieras |
+| 2026-11-05 | Marcela, Kevin, Carlos | Implementación del Solver | Script SLSQP funcional en el tab "Estadística" | Desarrollar Monte Carlo |
+| 2026-11-10 | Marcela, Kevin, Carlos | Pruebas de simulación y contingencia | Simulador de precios fall-back listo | Preparar simulacro |
 
 ## Recursos de consulta
 
